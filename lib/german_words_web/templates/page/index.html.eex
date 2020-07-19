@@ -1,0 +1,16 @@
+<table class="table">
+  <thead class="table-active">
+    <tr>
+      <th scope="col">Männlich</th>
+      <th scope="col">Weiblich</th>
+      <th scope="col">Neutral</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="table-primary">Mark</td>
+      <td class="table-danger">Otto</td>
+      <td class="table-success">@mdo</td>
+    </tr>
+  </tbody>
+</table>
