@@ -1,0 +1,23 @@
+<h1>Show Word</h1>
+
+<ul>
+
+  <li>
+    <strong>Word:</strong>
+    <%= @word.word %>
+  </li>
+
+  <li>
+    <strong>Gender:</strong>
+    <%= @word.gender %>
+  </li>
+
+  <li>
+    <strong>Translation:</strong>
+    <%= @word.translation %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.word_path(@conn, :edit, @word) %></span>
+<span><%= link "Back", to: Routes.word_path(@conn, :index) %></span>
