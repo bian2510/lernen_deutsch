@@ -8,7 +8,7 @@
   <tbody>
 <%= for word <- @words do %>
     <tr>
-    <%= if word.gender == "male" do%>
+    <%= if word.gender == "male" do %>
       <td>
         <span><%= link "Beispiel", to: Routes.word_path(@conn, :show, word) %></span> |
         <span><%= link "Bearbeiten", to: Routes.word_path(@conn, :edit, word) %></span> |
@@ -16,8 +16,8 @@
       </td>
       <td class="table-primary"><%= "Der #{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
     </tr>
-  <%end%>
-<%end%>
+  <% end %>
+<% end %>
   </tbody>
 </table>
 <table class="table d-inline w-25 p-3">
@@ -30,7 +30,7 @@
   <tbody>
 <%= for word <- @words do %>
     <tr>
-  <%= if word.gender == "female" do%>
+  <%= if word.gender == "female" do %>
       <td>
         <span><%= link "Beispiel", to: Routes.word_path(@conn, :show, word) %></span> |
         <span><%= link "Bearbeiten", to: Routes.word_path(@conn, :edit, word) %></span> |
@@ -38,8 +38,8 @@
       </td>
       <td class="table-danger"><%= "Die #{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
     </tr>
-  <%end%>
-<%end%>
+  <% end %>
+<% end %>
   </tbody>
 </table>
 <table class="table d-inline w-25 p-3">
@@ -52,7 +52,7 @@
   <tbody>
 <%= for word <- @words do %>
     <tr>
-  <%= if word.gender == "neutral" do%>
+  <%= if word.gender == "neutral" do %>
       <td>
         <span><%= link "Beispiel", to: Routes.word_path(@conn, :show, word) %></span> |
         <span><%= link "Bearbeiten", to: Routes.word_path(@conn, :edit, word) %></span> |
@@ -60,8 +60,8 @@
       </td>
       <td class="table-success"><%= "Das #{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
     </tr>
-  <%end%>
-<%end%>
+  <% end %>
+<% end %>
   </tbody>
 </table>
 
