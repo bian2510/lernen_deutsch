@@ -26,7 +26,7 @@ defmodule GermanWordsWeb.WordController do
       {:ok, word} ->
         conn
         |> put_flash(:info, "Word created successfully.")
-        |> redirect(to: Routes.word_path(conn, :show, word))
+        |> redirect(to: Routes.word_path(conn, :index))
 
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)

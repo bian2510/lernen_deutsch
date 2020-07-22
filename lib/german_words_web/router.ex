@@ -16,7 +16,7 @@ defmodule GermanWordsWeb.Router do
   scope "/", GermanWordsWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", WordController, :index
     resources "/words", WordController
   end
 
