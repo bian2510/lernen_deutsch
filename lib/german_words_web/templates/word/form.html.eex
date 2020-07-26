@@ -18,6 +18,13 @@
   <%= error_tag f, :translation %>
 
   <div>
+    <%= for word <- [:sustantive, :adjetive, :number, :color, :pronoun] do %>
+      <%= label f, word %>
+      <%=   checkbox f, word %>
+      <%= error_tag f, word %>
+    <% end %>
+  </div>
+  <div>
     <%= submit "Save" %>
   </div>
 <% end %>
