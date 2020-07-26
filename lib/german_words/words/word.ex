@@ -6,6 +6,11 @@ defmodule GermanWords.Words.Word do
     field :gender, :string
     field :translation, :string
     field :word, :string
+    field :sustantive, :boolean
+    field :adjetive, :boolean
+    field :number, :boolean
+    field :color, :boolean
+    field :pronoun, :boolean
 
     timestamps()
   end
@@ -13,7 +18,7 @@ defmodule GermanWords.Words.Word do
   @doc false
   def changeset(word, attrs) do
     word
-    |> cast(attrs, [:word, :gender, :translation])
+    |> cast(attrs, [:word, :gender, :translation, :sustantive, :adjetive, :number, :color])
     |> validate_required([:word, :gender, :translation])
   end
 end
