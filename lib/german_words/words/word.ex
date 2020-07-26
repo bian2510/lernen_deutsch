@@ -11,6 +11,7 @@ defmodule GermanWords.Words.Word do
     field :number, :boolean
     field :color, :boolean
     field :pronoun, :boolean
+    field :example, :string
 
     timestamps()
   end
@@ -18,7 +19,7 @@ defmodule GermanWords.Words.Word do
   @doc false
   def changeset(word, attrs) do
     word
-    |> cast(attrs, [:word, :gender, :translation, :sustantive, :adjetive, :number, :color])
-    |> validate_required([:word, :gender, :translation])
+    |> cast(attrs, [:word, :gender, :translation, :sustantive, :adjetive, :number, :color, :example])
+    |> validate_required([:word, :gender, :translation, :example])
   end
 end
