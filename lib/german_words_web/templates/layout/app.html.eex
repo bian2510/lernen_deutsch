@@ -21,10 +21,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Deutsche Wörter</a>
+              <a class="nav-link" href="#">Lernen Deutsche</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Geschlecht</a>
+              <a class="nav-link" href="#">Substantiven und Geschlecht</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Adjektive</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Farben</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pronomen</a>
             </li>
           </ul>
         </div>

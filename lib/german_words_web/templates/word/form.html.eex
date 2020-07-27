@@ -25,6 +25,11 @@
     <% end %>
   </div>
   <div>
+    <%= label f, :example %>
+    <%= textarea f, :example %>
+    <%= error_tag f, :example %>
+  </div>
+  <div>
     <%= submit "Save" %>
   </div>
 <% end %>
