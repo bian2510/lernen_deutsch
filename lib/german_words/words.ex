@@ -25,7 +25,8 @@ defmodule GermanWords.Words do
     query =
       from(Word,
         where: [sustantive: true],
-        select: [:id, :word, :gender, :translation])
+        select: [:id, :word, :gender, :translation]
+      )
 
     Repo.all(query)
   end
@@ -34,7 +35,8 @@ defmodule GermanWords.Words do
     query =
       from(Word,
         where: [number: true],
-        select: [:id, :word, :translation])
+        select: [:id, :word, :translation]
+      )
 
     Repo.all(query)
   end
@@ -43,7 +45,8 @@ defmodule GermanWords.Words do
     query =
       from(Word,
         where: [color: true],
-        select: [:id, :word, :translation])
+        select: [:id, :word, :translation]
+      )
 
     Repo.all(query)
   end
@@ -52,7 +55,8 @@ defmodule GermanWords.Words do
     query =
       from(Word,
         where: [pronoun: true],
-        select: [:id, :word, :translation])
+        select: [:id, :word, :translation]
+      )
 
     Repo.all(query)
   end
@@ -61,7 +65,8 @@ defmodule GermanWords.Words do
     query =
       from(Word,
         where: [verb: true],
-        select: [:id, :word, :translation])
+        select: [:id, :word, :translation]
+      )
 
     Repo.all(query)
   end
