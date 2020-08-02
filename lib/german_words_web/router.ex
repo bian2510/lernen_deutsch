@@ -18,6 +18,11 @@ defmodule GermanWordsWeb.Router do
 
     get "/", WordController, :index
     resources "/words", WordController
+    get "/sustantives", WordController, :sustantives
+    get "/colors", WordController, :colors
+    get "/numbers", WordController, :numbers
+    get "/pronouns", WordController, :pronouns
+    get "/verbs", WordController, :verbs
   end
 
   # Other scopes may use custom stacks.

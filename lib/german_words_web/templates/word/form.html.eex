@@ -10,7 +10,7 @@
   <%= error_tag f, :word %>
 
   <%= label f, :gender %>
-  <%= select f, :gender, ["Männlich": "male", "Weiblich": "female", "Neutral": "neutral"] %>
+  <%= select f, :gender, ["Wählen": nil, "Männlich": "male", "Weiblich": "female", "Neutral": "neutral"] %>
   <%= error_tag f, :gender %>
 
   <%= label f, :translation %>
@@ -18,7 +18,7 @@
   <%= error_tag f, :translation %>
 
   <div>
-    <%= for word <- [:sustantive, :adjetive, :number, :color, :pronoun] do %>
+    <%= for word <- [:sustantive, :adjetive, :number, :color, :pronoun, :verb] do %>
       <%= label f, word %>
       <%=   checkbox f, word %>
       <%= error_tag f, word %>

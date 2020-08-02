@@ -1,0 +1,22 @@
+<table class="table d-inline w-25 p-3">
+  <thead class="table-active">
+    <tr>
+      <th scope="col">Aktionen</th>
+      <th scope="col">Farben</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for word <- @words do %>
+    <tr>
+      <td>
+        <span><%= link "Beispiel", to: Routes.word_path(@conn, :show, word) %></span> |
+        <span><%= link "Bearbeiten", to: Routes.word_path(@conn, :edit, word) %></span> |
+        <span><%= link "Entfernen", to: Routes.word_path(@conn, :delete, word), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+      <td><%= "#{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Neues Wort", to: Routes.word_path(@conn, :new) %></span>

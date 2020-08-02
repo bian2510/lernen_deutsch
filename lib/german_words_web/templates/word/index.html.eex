@@ -1,64 +1,23 @@
 <table class="table d-inline w-25 p-3">
-  <thead class="table-active">
+  <thead class="table-dark">
     <tr>
       <th scope="col">Aktionen</th>
-      <th scope="col">Männlich</th>
+      <th scope="col">Worten</th>
     </tr>
   </thead>
   <tbody>
 <%= for word <- @words do %>
     <tr>
-    <%= if word.gender == "male" do %>
-      <td>
+      <td class="table-active">
         <span><%= link "Beispiel", to: Routes.word_path(@conn, :show, word) %></span> |
         <span><%= link "Bearbeiten", to: Routes.word_path(@conn, :edit, word) %></span> |
         <span><%= link "Entfernen", to: Routes.word_path(@conn, :delete, word), method: :delete, data: [confirm: "Are you sure?"] %></span>
       </td>
-      <td class="table-primary"><%= "Der #{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
-    </tr>
-  <% end %>
-<% end %>
-  </tbody>
-</table>
-<table class="table d-inline w-25 p-3">
-  <thead class="table-active">
-    <tr>
-      <th scope="col">Aktionen</th>
-      <th scope="col">Weiblich</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for word <- @words do %>
-    <tr>
-  <%= if word.gender == "female" do %>
-      <td>
-        <span><%= link "Beispiel", to: Routes.word_path(@conn, :show, word) %></span> |
-        <span><%= link "Bearbeiten", to: Routes.word_path(@conn, :edit, word) %></span> |
-        <span><%= link "Entfernen", to: Routes.word_path(@conn, :delete, word), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-      <td class="table-danger"><%= "Die #{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
-    </tr>
-  <% end %>
-<% end %>
-  </tbody>
-</table>
-<table class="table d-inline w-25 p-3">
-  <thead class="table-active">
-    <tr>
-      <th scope="col">Aktionen</th>
-      <th scope="col">Neutral</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for word <- @words do %>
-    <tr>
-  <%= if word.gender == "neutral" do %>
-      <td>
-        <span><%= link "Beispiel", to: Routes.word_path(@conn, :show, word) %></span> |
-        <span><%= link "Bearbeiten", to: Routes.word_path(@conn, :edit, word) %></span> |
-        <span><%= link "Entfernen", to: Routes.word_path(@conn, :delete, word), method: :delete, data: [confirm: "Are you sure?"] %></span>
-      </td>
-      <td class="table-success"><%= "Das #{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
+  <%= case word.gender do %>
+    <%= "male" ->%> <td class="table-active"><%= "Der #{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
+    <%= "female" ->%> <td class="table-active"><%= "Die #{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
+    <%= "neutral" ->%> <td class="table-active"><%= "Das #{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
+    <%= _ ->%> <td class="table-active"><%= "#{String.capitalize(word.word)} (#{String.capitalize(word.translation)})" %></td>
     </tr>
   <% end %>
 <% end %>

@@ -23,7 +23,7 @@ defmodule GermanWordsWeb.WordController do
       |> Enum.into(%{})
 
     case Words.create_word(params) do
-      {:ok, word} ->
+      {:ok, _word} ->
         conn
         |> put_flash(:info, "Word created successfully.")
         |> redirect(to: Routes.word_path(conn, :index))
@@ -65,5 +65,30 @@ defmodule GermanWordsWeb.WordController do
     conn
     |> put_flash(:info, "Word deleted successfully.")
     |> redirect(to: Routes.word_path(conn, :index))
+  end
+
+  def sustantives(conn, _params) do
+    sustantives = Words.list_sustantives()
+    render(conn, "sustantive.html", words: sustantives)
+  end
+
+  def numbers(conn, _params) do
+    numbers = Words.list_numbers()
+    render(conn, "number.html", words: numbers)
+  end
+
+  def colors(conn, _params) do
+    colors = Words.list_colors()
+    render(conn, "color.html", words: colors)
+  end
+
+  def pronouns(conn, _params) do
+    pronouns = Words.list_pronouns()
+    render(conn, "pronoun.html", words: pronouns)
+  end
+
+  def verbs(conn, _params) do
+    verbs = Words.list_verbs()
+    render(conn, "verb.html", words: verbs)
   end
 end

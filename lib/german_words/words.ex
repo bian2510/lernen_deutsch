@@ -21,6 +21,51 @@ defmodule GermanWords.Words do
     Repo.all(Word)
   end
 
+  def list_sustantives do
+    query =
+      from(Word,
+        where: [sustantive: true],
+        select: [:id, :word, :gender, :translation])
+
+    Repo.all(query)
+  end
+
+  def list_numbers do
+    query =
+      from(Word,
+        where: [number: true],
+        select: [:id, :word, :translation])
+
+    Repo.all(query)
+  end
+
+  def list_colors do
+    query =
+      from(Word,
+        where: [color: true],
+        select: [:id, :word, :translation])
+
+    Repo.all(query)
+  end
+
+  def list_pronouns do
+    query =
+      from(Word,
+        where: [pronoun: true],
+        select: [:id, :word, :translation])
+
+    Repo.all(query)
+  end
+
+  def list_verbs do
+    query =
+      from(Word,
+        where: [verb: true],
+        select: [:id, :word, :translation])
+
+    Repo.all(query)
+  end
+
   @doc """
   Gets a single word.
 
